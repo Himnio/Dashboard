@@ -18,7 +18,7 @@ const Pie = () => {
       <Header title="Pie Chart" subtitle="" />
       <Box height="75vh">
         <div>
-          <h4 className="font-semibold">Select the year For year base complaine</h4>
+          <h4 className="text-sm pb-4">Select the year for year base complaine</h4>
         <SelectAutoWidth onYearChange={handleYearChange}/>
         </div>
         <PieChart selectedYear={selectedYear} />

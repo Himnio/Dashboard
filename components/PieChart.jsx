@@ -43,7 +43,7 @@ const PieChart = ({selectedYear}) => {
           },
         },
       }}
-      margin={{ top: 40, right: 100, bottom: 80, left: 20 }}
+      margin={{ top: 40, right: 250, bottom: 60, left: 100 }}
       innerRadius={0.5}
       padAngle={0.7}
       cornerRadius={3}
@@ -88,7 +88,7 @@ const PieChart = ({selectedYear}) => {
           anchor: "right",
           direction: "column",
           justify: false,
-          translateX: 0,
+          translateX: 180,
           translateY: 56,
           itemsSpacing: 20,
           itemWidth: 100,
