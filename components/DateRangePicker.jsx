@@ -7,8 +7,8 @@ import { addDays } from "date-fns";
 import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
 
- // date state
-const DateRangePickerComp = () => {    
+// date state
+const DateRangePickerComp = () => {
   const [range, setRange] = useState([
     {
       startDate: new Date(),
@@ -48,7 +48,8 @@ const DateRangePickerComp = () => {
       <input
         value={`${format(range[0].startDate, "MM/dd/yyyy")} To ${format(
           range[0].endDate,
-          "MM/dd/yyyy")}`}
+          "MM/dd/yyyy"
+        )}`}
         readOnly
         className="text-sm p-2.5 border border-gray-600 rounded"
         onClick={() => setOpen((open) => !open)}
