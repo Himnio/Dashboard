@@ -42,6 +42,11 @@ const PieChart = ({selectedYear}) => {
             fill: colors.grey[100],
           },
         },
+        tooltip: {
+          container: {
+            color: colors.primary[500],
+          },
+        },
       }}
       margin={{ top: 40, right: 250, bottom: 60, left: 100 }}
       innerRadius={0.5}

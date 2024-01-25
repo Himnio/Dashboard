@@ -1,7 +1,6 @@
 import React, { use } from "react";
 import { signIn, signOut, useSession } from "next-auth/react";
 import Image from "next/image";
-import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 
 const Profile = () => {
   const { data: session } = useSession();
