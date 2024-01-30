@@ -13046,8 +13046,8 @@ export const mockTransactions = [
 
 export const mockBarData = [
   {
-    country: "AD",
-    "hot dog": 500,
+    issues: "Pass/Reserved Seat Issue",
+    "Wrong Date/Day/Month": 500,
     "hot dogColor": "hsl(229, 70%, 50%)",
     burger: 96,
     burgerColor: "hsl(296, 70%, 50%)",
@@ -13057,7 +13057,7 @@ export const mockBarData = [
     donutColor: "hsl(340, 70%, 50%)",
   },
   {
-    country: "AE",
+    issues: "Ticket Related Issue",
     "hot dog": 55,
     "hot dogColor": "hsl(307, 70%, 50%)",
     burger: 28,
@@ -13068,7 +13068,7 @@ export const mockBarData = [
     donutColor: "hsl(275, 70%, 50%)",
   },
   {
-    country: "AF",
+    issues: "Vehicle Related Issue",
     "hot dog": 109,
     "hot dogColor": "hsl(72, 70%, 50%)",
     burger: 23,
@@ -13079,7 +13079,7 @@ export const mockBarData = [
     donutColor: "hsl(256, 70%, 50%)",
   },
   {
-    country: "AG",
+    issues: "Crew Behaviors",
     "hot dog": 133,
     "hot dogColor": "hsl(257, 70%, 50%)",
     burger: 52,
@@ -13090,7 +13090,7 @@ export const mockBarData = [
     donutColor: "hsl(9, 70%, 50%)",
   },
   {
-    country: "AI",
+    issues: "Route",
     "hot dog": 81,
     "hot dogColor": "hsl(190, 70%, 50%)",
     burger: 80,
@@ -13101,7 +13101,7 @@ export const mockBarData = [
     donutColor: "hsl(285, 70%, 50%)",
   },
   {
-    country: "AL",
+    issues: "Facility Issue",
     "hot dog": 66,
     "hot dogColor": "hsl(208, 70%, 50%)",
     burger: 111,
@@ -13112,7 +13112,18 @@ export const mockBarData = [
     donutColor: "hsl(76, 70%, 50%)",
   },
   {
-    country: "AM",
+    issues: "Website/App Related Issue",
+    "hot dog": 80,
+    "hot dogColor": "hsl(87, 70%, 50%)",
+    burger: 47,
+    burgerColor: "hsl(141, 70%, 50%)",
+    kebab: 158,
+    kebabColor: "hsl(224, 70%, 50%)",
+    donut: 49,
+    donutColor: "hsl(274, 70%, 50%)",
+  },
+  {
+    issues: "Others",
     "hot dog": 80,
     "hot dogColor": "hsl(87, 70%, 50%)",
     burger: 47,
