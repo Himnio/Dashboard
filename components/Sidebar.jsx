@@ -116,7 +116,7 @@ const Sidebar = () => {
                   BMTC
                 </Typography>
                 <Typography variant="h5" color={colors.greenAccent[500]}>
-                Bengaluru Metropolitan Transport Corporation
+                Bengaluru Metropolitan <br/> Transport Corporation
                 </Typography>
               </Box>
             </Box>

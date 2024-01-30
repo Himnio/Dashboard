@@ -256,7 +256,7 @@ export default function Home() {
             p="15px"
           >
             <Typography color={colors.grey[100]} variant="h5" fontWeight="600">
-              Recent ticket resolved
+              Recent Ticket
             </Typography>
           </Box>
           {mockTransactions.map((transaction, i) => (

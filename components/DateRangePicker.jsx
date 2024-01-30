@@ -44,7 +44,7 @@ const DateRangePickerComp = () => {
   };
 
   return (
-    <div className="inline-block relative">
+    <div className="inline-block relative text-black">
       <input
         value={`${format(range[0].startDate, "MM/dd/yyyy")} To ${format(
           range[0].endDate,
