@@ -5,15 +5,35 @@ import { tokens } from "@/app/theme";
 import { useTheme } from "@mui/material";
 import { mockPieData as data } from "@/data/mockData";
 
-const PieChart = ({selectedYear}) => {
+import React, { useRef } from "react";
+import html2canvas from "html2canvas";
+
+
+
+const PieChart = ({selectedYear }) => {
+  const chartRef = useRef(null);
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
-  const filterData = data.filter((item)=>item.year == selectedYear);
+  const filterData = data.filter((item) => item.year == selectedYear);
+
   console.log(selectedYear);
+  console.log("Ref:",{chartRef})
+
+  const handleDownload = () => {
+    if (chartRef.current) {
+      html2canvas(chartRef.current).then((canvas) => {
+        const link = document.createElement("a");
+        link.download = "pie_chart.png";
+        link.href = canvas.toDataURL("image/png");
+        link.click();
+      });
+    }
+  };
 
 
   return (
     <ResponsivePie
+      ref={chartRef}
       data={filterData}
       theme={{
         axis: {

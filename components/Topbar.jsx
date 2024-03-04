@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { Box, IconButton, useTheme } from "@mui/material";
 import { useContext } from "react";
@@ -14,7 +14,6 @@ import Signin from "@/components/Signin";
 import Profile from "@/components/Profile";
 
 const Topbar = () => {
-
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const colorMode = useContext(ColorModeContext);
@@ -28,7 +27,9 @@ const Topbar = () => {
         </IconButton> */}
       </Box>
       <Box display="flex">
-        <Signin />
+        <div className="pt-1 mr-1">
+          <Signin />
+        </div>
         <IconButton onClick={colorMode.toggleColorMode}>
           {theme.palette.mode === "dark" ? (
             <DarkModeOutlinedIcon />
@@ -36,12 +37,12 @@ const Topbar = () => {
             <LightModeOutlinedIcon />
           )}
         </IconButton>
-        <IconButton>
+        {/* <IconButton>
           <NotificationsOutlinedIcon />
         </IconButton>
         <IconButton>
           <SettingsOutlinedIcon />
-        </IconButton>
+        </IconButton> */}
         <IconButton>
           <Profile />
         </IconButton>

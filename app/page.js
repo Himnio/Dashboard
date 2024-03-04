@@ -2,7 +2,7 @@
 
 import { Box, Button, IconButton, Typography, useTheme } from "@mui/material";
 import { tokens } from "@/app/theme";
-import { mockTransactions } from "@/data/mockData";
+import { mockTransactions, newTicket } from "@/data/mockData";
 import DownloadOutlinedIcon from "@mui/icons-material/DownloadOutlined";
 import EmailIcon from "@mui/icons-material/Email";
 import PointOfSaleIcon from "@mui/icons-material/PointOfSale";
@@ -21,9 +21,9 @@ export default function Home() {
     <Box m="20px">
       {/* HEADER */}
       <Box display="flex" justifyContent="space-between" alignItems="center">
-        <Header title="DASHBOARD" subtitle="Welcome to your dashboard" />
+        <Header title="DASHBOARD" subtitle="Welcome To Bmtc Dashboard" />
 
-        <Box>
+        {/* <Box>
           <Button
             sx={{
               backgroundColor: colors.blueAccent[700],
@@ -36,7 +36,7 @@ export default function Home() {
             <DownloadOutlinedIcon sx={{ mr: "10px" }} />
             Download Reports
           </Button>
-        </Box>
+        </Box> */}
       </Box>
 
       {/* GRID & CHARTS */}
@@ -47,6 +47,25 @@ export default function Home() {
         gap="20px"
       >
         {/* ROW 1 */}
+        <Box
+          gridColumn="span 12"
+          backgroundColor={colors.primary[400]}
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+        >
+          <StatBox
+            title="50,361"
+            subtitle="Total number of issues"
+            progress="0.75"
+            increase="+5%"
+            icon={
+              <EmailIcon
+                sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
+              />
+            }
+          />
+        </Box>
         <Box
           gridColumn="span 3"
           backgroundColor={colors.primary[400]}
@@ -202,7 +221,7 @@ export default function Home() {
 
         {/* ROW 2 */}
         <Box
-          gridColumn="span 8"
+          gridColumn="span 9"
           gridRow="span 2"
           backgroundColor={colors.primary[400]}
         >
@@ -238,10 +257,10 @@ export default function Home() {
             </Box>
           </Box>
           <Box height="250px" m="-20px 0 0 0">
-            <LineChart isDashboard={true} />
+            <LineChart/>
           </Box>
         </Box>
-        <Box
+        {/* <Box
           gridColumn="span 4"
           gridRow="span 2"
           backgroundColor={colors.primary[400]}
@@ -256,12 +275,12 @@ export default function Home() {
             p="15px"
           >
             <Typography color={colors.grey[100]} variant="h5" fontWeight="600">
-              Recent Ticket
+              New Ticket
             </Typography>
           </Box>
-          {mockTransactions.map((transaction, i) => (
+          {newTicket.map((transaction, i) => (
             <Box
-              key={`${transaction.txId}-${i}`}
+              key={`${transaction.Id}-${i}`}
               display="flex"
               justifyContent="space-between"
               alignItems="center"
@@ -274,7 +293,7 @@ export default function Home() {
                   variant="h5"
                   fontWeight="600"
                 >
-                  {transaction.txId}
+                  {transaction.Id}
                 </Typography>
                 <Typography color={colors.grey[100]}>
                   {transaction.user}
@@ -290,11 +309,11 @@ export default function Home() {
               </Box>
             </Box>
           ))}
-        </Box>
+        </Box> */}
 
         {/* ROW 3 */}
         <Box
-          gridColumn="span 4"
+          gridColumn="span 3"
           gridRow="span 2"
           backgroundColor={colors.primary[400]}
           p="30px"
@@ -306,13 +325,13 @@ export default function Home() {
             display="flex"
             flexDirection="column"
             alignItems="center"
-            mt="25px"
+            mt="30px"
           >
             <ProgressCircle size="125" />
             <Typography
               variant="h5"
               color={colors.greenAccent[500]}
-              sx={{ mt: "15px" }}
+              sx={{ mt: "50px" }}
             >
               48,352 Feedback Number
             </Typography>
@@ -320,8 +339,8 @@ export default function Home() {
           </Box>
         </Box>
         <Box
-          gridColumn="span 8"
-          gridRow="span 2"
+          gridColumn="span 12"
+          gridRow="span 3"
           backgroundColor={colors.primary[400]}
         >
           <Typography
@@ -331,8 +350,8 @@ export default function Home() {
           >
             Two week data
           </Typography>
-          <Box height="250px" mt="-20px">
-            <BarChart isDashboard={true} />
+          <Box height="420px" mt="-20px">
+            <BarChart />
           </Box>
         </Box>
       </Box>
