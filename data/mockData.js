@@ -13388,26 +13388,26 @@ export const mockLineData = [
         "x": "Re-Issued",
         "y": 212
       },
-      {
-        "x": "Ticket printing issue",
-        "y": 190
-      },
-      {
-        "x": "Ticket not issued",
-        "y": 270
-      },
-      {
-        "x": "Change Due",
-        "y": 9
-      },
-      {
-        "x": "Checking Issue",
-        "y": 75
-      },
-      {
-        "x": "Q R code issue",
-        "y": 175
-      },
+      // {
+      //   "x": "Ticket printing issue",
+      //   "y": 190
+      // },
+      // {
+      //   "x": "Ticket not issued",
+      //   "y": 270
+      // },
+      // {
+      //   "x": "Change Due",
+      //   "y": 9
+      // },
+      // {
+      //   "x": "Checking Issue",
+      //   "y": 75
+      // },
+      // {
+      //   "x": "Q R code issue",
+      //   "y": 175
+      // },
     ],
   },
   // {

@@ -6,7 +6,7 @@ import { tokens } from "@/app/theme";
 import { mockBarData as data } from "@/data/mockData";
 import { useEffect, useState } from "react";
 
-const BarChart = ({ isDashboard = false }) => {
+const BarChart = ({ selectedDateRange }) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
 
@@ -55,7 +55,7 @@ const BarChart = ({ isDashboard = false }) => {
       "Emission OF Smoke": 333,
       "Pathetic Seats": 222,
       "Display Of Advertisement": 888,
-      "Cleanliness Of vehicle": 111,
+      "Cleanliness Of vehicle": 244,
       "A/C Issue": 999,
     },
     {
@@ -78,7 +78,7 @@ const BarChart = ({ isDashboard = false }) => {
       "Delay departure": 333,
       "Stopping more than mins in Bus stops": 222,
       "Non stoppage of buses in scheduled bus stops": 888,
-      "Trip Miss": 111,
+      "Trip Miss": 244,
     },
     {
       issues: "Facility Issue",
@@ -98,7 +98,7 @@ const BarChart = ({ isDashboard = false }) => {
     },
     {
       issues: "Website/App Related Issue",
-      "Website Related Complaints": 111,
+      "Website Related Complaints": 244,
       "Mobile app related": 999,
     },
   ];
@@ -194,7 +194,7 @@ const BarChart = ({ isDashboard = false }) => {
         "Mobile app related",
       ]}
       indexBy="issues"
-      margin={{ top: 50, right: 150, bottom: 50, left: 60 }}
+      margin={{ top: 50, right: 40, bottom: 50, left: 80 }}
       padding={0.3}
       valueScale={{ type: "linear" }}
       indexScale={{ type: "band", round: true }}
@@ -249,7 +249,7 @@ const BarChart = ({ isDashboard = false }) => {
       }}
       axisLeft={{
         tickSize: 5,
-        tickPadding: 5,
+        tickPadding: 0,
         tickRotation: 0,
         legend: "Issue Rate", // changed
         legendPosition: "middle",
@@ -262,30 +262,30 @@ const BarChart = ({ isDashboard = false }) => {
         from: "color",
         modifiers: [["darker", 1.6]],
       }}
-      legends={[
-        {
-          dataFrom: "keys",
-          anchor: "top-right",
-          direction: "column",
-          justify: false,
-          translateX: 100,
-          translateY: 0,
-          itemsSpacing: 30,
-          itemWidth: 50,
-          itemHeight: 0,
-          itemDirection: "left-to-right",
-          itemOpacity: 0.85,
-          symbolSize: 20,
-          effects: [
-            {
-              on: "hover",
-              style: {
-                itemOpacity: 1,
-              },
-            },
-          ],
-        },
-      ]}
+      // legends={[
+      //   {
+      //     dataFrom: "keys",
+      //     anchor: "top-right",
+      //     direction: "column",
+      //     justify: false,
+      //     translateX: 100,
+      //     translateY: 0,
+      //     itemsSpacing: 30,
+      //     itemWidth: 50,
+      //     itemHeight: 0,
+      //     itemDirection: "left-to-right",
+      //     itemOpacity: 0.85,
+      //     symbolSize: 20,
+      //     effects: [
+      //       {
+      //         on: "hover",
+      //         style: {
+      //           itemOpacity: 1,
+      //         },
+      //       },
+      //     ],
+      //   },
+      // ]}
       role="application"
       barAriaLabel={function (e) {
         return e.id + ": " + e.formattedValue + " in country: " + e.indexValue;

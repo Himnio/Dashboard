@@ -3,20 +3,20 @@
 import { ResponsiveLine } from "@nivo/line";
 import { useTheme } from "@mui/material";
 import { tokens } from "@/app/theme";
-import { mockLineData as data } from "@/data/mockData";
+import { lineData as data } from "@/data/line.chart";
 
 const LineChart = ({
   isCustomLineColors = false,
   isDashboard = false,
   selectedYear,
+  selectedCategory,
 }) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
-  // const filterData = data.filter((items) => items.year == selectedYear);
-
+  const filterData = data.filter((items) => items.id == selectedCategory);
   return (
     <ResponsiveLine
-      data={data}
+      data={filterData}
       theme={{
         axis: {
           domain: {
@@ -51,7 +51,7 @@ const LineChart = ({
         },
       }}
       colors={isDashboard ? { datum: "color" } : { scheme: "nivo" }} // added
-      margin={{ top: 50, right: 110, bottom: 50, left: 60 }}
+      margin={{ top: 50, right: 110, bottom: 60, left: 80 }}
       xScale={{ type: "point" }}
       yScale={{
         type: "linear",
@@ -68,18 +68,18 @@ const LineChart = ({
         orient: "bottom",
         tickSize: 0,
         tickPadding: 5,
-        tickRotation: 0,
-        legend: isDashboard ? undefined : "transportation", // added
+        // tickRotation: +25,
+        legend: isDashboard ? undefined : "Issues", 
         legendOffset: 36,
         legendPosition: "middle",
       }}
       axisLeft={{
         orient: "left",
-        tickValues: 5, // added
+        tickValues: 5,
         tickSize: 3,
-        tickPadding: 5,
+        tickPadding: 3,
         tickRotation: 0,
-        legend: isDashboard ? undefined : "count", // added
+        legend: isDashboard ? undefined : "Issue rate", 
         legendOffset: -40,
         legendPosition: "middle",
       }}
@@ -93,9 +93,9 @@ const LineChart = ({
       useMesh={true}
       legends={[
         {
-          anchor: "bottom-right",
-          direction: "column",
-          justify: false,
+          anchor: "top-right",
+          direction: "row",
+          justify: true,
           translateX: 100,
           translateY: 0,
           itemsSpacing: 0,
@@ -103,8 +103,8 @@ const LineChart = ({
           itemWidth: 80,
           itemHeight: 20,
           itemOpacity: 0.75,
-          symbolSize: 12,
-          symbolShape: "circle",
+          symbolSize: 0,
+          symbolShape: "diamond",
           symbolBorderColor: "rgba(0, 0, 0, .5)",
           effects: [
             {

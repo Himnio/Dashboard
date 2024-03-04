@@ -221,7 +221,7 @@ export default function Home() {
 
         {/* ROW 2 */}
         <Box
-          gridColumn="span 8"
+          gridColumn="span 9"
           gridRow="span 2"
           backgroundColor={colors.primary[400]}
         >
@@ -257,10 +257,10 @@ export default function Home() {
             </Box>
           </Box>
           <Box height="250px" m="-20px 0 0 0">
-            <LineChart isDashboard={true} />
+            <LineChart/>
           </Box>
         </Box>
-        <Box
+        {/* <Box
           gridColumn="span 4"
           gridRow="span 2"
           backgroundColor={colors.primary[400]}
@@ -309,12 +309,12 @@ export default function Home() {
               </Box>
             </Box>
           ))}
-        </Box>
+        </Box> */}
 
         {/* ROW 3 */}
         <Box
-          gridColumn="span 2"
-          gridRow="span 3"
+          gridColumn="span 3"
+          gridRow="span 2"
           backgroundColor={colors.primary[400]}
           p="30px"
         >
@@ -339,7 +339,7 @@ export default function Home() {
           </Box>
         </Box>
         <Box
-          gridColumn="span 10"
+          gridColumn="span 12"
           gridRow="span 3"
           backgroundColor={colors.primary[400]}
         >
